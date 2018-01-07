@@ -2,6 +2,8 @@
 
 create a leaderboard feed for a game for discord (or whatever place you want to post to)
 
+will likely make lots of breaking changes in the future
+
 # use
 
 create a config.js similar to this to make it work
