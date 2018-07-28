@@ -3,7 +3,7 @@ var _ = require('lodash')
 var io = require('socket.io-client')
 var socket = io.connect('http://localhost:2000/feed')
 
-var game = 'pd0w5n31'
+var game = 'pd0w5n31' // hidden_paws
 
 socket
   .on('connect', () => {
