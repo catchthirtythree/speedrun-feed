@@ -19,7 +19,7 @@ const Categories = (() => {
     records: {
       get: (id, query = {}, options) => {
         try {
-          return request('GET', `${base}${resource}/${id}${records}` + utils.buildQueryParameters(query), options);
+          return request('GET', `${base}${resource}/${id}${records}` + utils.build_query_parameters(query), options);
         } catch (e) {
           return e;
         }

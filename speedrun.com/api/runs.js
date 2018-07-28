@@ -9,7 +9,7 @@ const Runs = (() => {
   return Object.assign({
     get: (query, options) => {
       try {
-        return request('GET', base + resource + utils.buildQueryParameters(query), options);
+        return request('GET', base + resource + utils.build_query_parameters(query), options);
       } catch (e) {
         return e;
       }

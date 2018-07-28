@@ -1,28 +1,25 @@
 # speedrun-feed
 
-create a leaderboard feed for a game for discord (or whatever place you want to post to)
+Create a feed of newly verified runs from speedrun.com. Allow a client to listen to the feed and use the data how it wishes (ie: send it to a discord webhook to create a feed for a specific game).
 
-will likely make lots of breaking changes in the future
+This project has two parts to it:
 
-# use
+1. feed-server
+2. feed-client
 
-create a config.js similar to this to make it work
+## feed-server
+
+Feed-server is a simple server that polls speedrun.com's most recent runs and emits them through socket.io to subscribers listening on 'run' and 'game-run', with 'run' being a feed of all runs being verified and 'game-run' being a feed of a particular game's runs being verified.
+
+## feed-client
+
+Feed-client is a client subscribing to feed-server through socket.io listening to the information that they want. The client can either listen for all runs or emit a particular game's id and listen only for verified runs coming from that game.
+
+# install
 
 ```javascript
-var game = {
-  id: "nd24lq10", // game id
-  time: {
-    type: 'primary_t', // 'realtime', 'realtime_noloads_t', 'ingame_t'
-    format: "mm:ss.SSS" // HH:mm:ss.SSS
-  }
-};
-
-var webhook = {
-  color: "16777215",
-  title: ((title) => `${title} posted a new time on the leaderboards! Click here to see it.`),
-  type: "link",
-  url: "webhook rl goes here"
-};
-
-module.exports = { game, webhook }
+npm install
+npm run start-feed (in one console)
+npm run start-client (in another console)
 ```
+
