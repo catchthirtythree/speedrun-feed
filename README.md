@@ -15,7 +15,7 @@ Feed-server is a simple server that polls speedrun.com's most recent runs and em
 
 Feed-client is a client subscribing to feed-server through socket.io listening to the information that they want. The client can either listen for all runs or emit a particular game's id and listen only for verified runs coming from that game.
 
-# install
+# use
 
 ```javascript
 npm install
