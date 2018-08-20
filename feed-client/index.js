@@ -76,12 +76,12 @@ var process_run = (run) => {
   var embedded_fields = _.reduce(fields, (acc, value, key) => {
     var field = {
       name: _.startCase(key),
-      value: (value || '').toString()
+      value: (value || 'N/A').toString()
     }
 
-    if (!_.isEmpty(field.value)) {
+    // if (!_.isEmpty(field.value)) {
       acc.push(field)
-    }
+    // }
 
     return acc
   }, [])
@@ -91,7 +91,8 @@ var process_run = (run) => {
 }
 
 var post_run = (title, url, fields) => {
-  var url = 'https://discordapp.com/api/webhooks/286673585894981632/8ZhfK1EuB5XqClMlWbH-LHGbHvMkwZJNypElumZkBw7xc4uuTniG4XbWpOmZ_Jmess4q'
+  // URL to test discord server
+  var api_url = 'https://discordapp.com/api/webhooks/286673585894981632/8ZhfK1EuB5XqClMlWbH-LHGbHvMkwZJNypElumZkBw7xc4uuTniG4XbWpOmZ_Jmess4q'
   var json = {
     embeds: [{
       color: 16777215,
@@ -103,7 +104,7 @@ var post_run = (title, url, fields) => {
   }
 
   // Post to discord webhook.
-  Discord.post(url, json)
+  Discord.post(api_url, json)
     .then(response => console.log)
     .catch(error => console.log)
 }
