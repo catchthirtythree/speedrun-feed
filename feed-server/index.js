@@ -2,6 +2,7 @@
 var _ = require('lodash')
 
 var config = require('./config')
+
 var io = require('socket.io')(config.feed.port)
 var feed = require('./feed')(io)
 
